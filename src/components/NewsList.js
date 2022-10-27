@@ -1,3 +1,5 @@
+import NewsItem from "./NewsItem"
+
 const NewsList = ({newsPosts}) => {
 
   // if(loading) {
@@ -6,8 +8,9 @@ const NewsList = ({newsPosts}) => {
   //   )
   // }
   return <>
-    {newsPosts.articles.map((item) => (<h5 key={item.id}>{item.author}</h5>))}
-  </>;
+    {newsPosts.articles.map((item, i) => (<NewsItem key={i} newsPosts={newsPosts} />))}
+
+</>
 };
 
 export default NewsList;
